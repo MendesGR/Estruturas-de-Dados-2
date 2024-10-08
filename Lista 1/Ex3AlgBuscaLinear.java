@@ -55,7 +55,7 @@ public class Ex3AlgBuscaLinear {
         long segundos = (tempoTotal % 60000) / 1000;
         long milissegundos = tempoTotal % 1000;
 
-        System.out.printf("Tempo da busca: %2d min, %2d seg, %2d ms%n", minutos, segundos, milissegundos);
+        System.out.printf("Tempo da busca: %2d min, %2d seg, %3d ms%n", minutos, segundos, milissegundos);
         System.out.println();
     }
 
