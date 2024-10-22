@@ -12,37 +12,37 @@ public class Ex2AlgoritmosOrdenacao {
         for (int i = 0; i < repeticoes; i++) {
             int[] vetorOriginal = gerarVetorAleatorio(tamanho, maxVal);
 
-            // Medir tempo de BubbleSort
+            // tempo do BubbleSort
             int[] vetor = Arrays.copyOf(vetorOriginal, vetorOriginal.length);
             long comeco = System.nanoTime();
             bubbleSort(vetor);
             tempos[0][i] = System.nanoTime() - comeco;
 
-            // Medir tempo de InsertionSort
+            // tempo do InsertionSort
             vetor = Arrays.copyOf(vetorOriginal, vetorOriginal.length);
             comeco = System.nanoTime();
             insertionSort(vetor);
             tempos[1][i] = System.nanoTime() - comeco;
 
-            // Medir tempo de SelectionSort
+            // tempo do SelectionSort
             vetor = Arrays.copyOf(vetorOriginal, vetorOriginal.length);
             comeco = System.nanoTime();
             selectionSort(vetor);
             tempos[2][i] = System.nanoTime() - comeco;
 
-            // Medir tempo de ShellSort
+            // tempo do ShellSort
             vetor = Arrays.copyOf(vetorOriginal, vetorOriginal.length);
             comeco = System.nanoTime();
             shellSort(vetor);
             tempos[3][i] = System.nanoTime() - comeco;
 
-            // Medir tempo de MergeSort
+            // tempo do MergeSort
             vetor = Arrays.copyOf(vetorOriginal, vetorOriginal.length);
             comeco = System.nanoTime();
             mergeSort(vetor, 0, vetor.length - 1);
             tempos[4][i] = System.nanoTime() - comeco;
 
-            // Medir tempo de QuickSort
+            // tempo do QuickSort
             vetor = Arrays.copyOf(vetorOriginal, vetorOriginal.length);
             comeco = System.nanoTime();
             quickSort(vetor, 0, vetor.length - 1);
@@ -63,7 +63,6 @@ public class Ex2AlgoritmosOrdenacao {
         return vetor;
     }
 
-    // BubbleSort
     public static void bubbleSort(int[] vetor) {
 
         for (int i = 0; i < vetor.length - 1; i++) {
@@ -80,7 +79,6 @@ public class Ex2AlgoritmosOrdenacao {
 
     }
 
-    // InsertionSort
     public static void insertionSort(int[] vetor) {
         for (int i = 1; i < vetor.length; i++) {
             int elemento = vetor[i];
@@ -97,7 +95,6 @@ public class Ex2AlgoritmosOrdenacao {
 
     }
 
-    // SelectionSort
     public static void selectionSort(int[] vetor) {
         for (int i = 0; i < vetor.length - 1; i++) {
             int pos_menor = i;
@@ -115,7 +112,6 @@ public class Ex2AlgoritmosOrdenacao {
         }
     }
 
-    // ShellSort
     public static void shellSort(int[] vetor) {
         int tamanho = vetor.length;
         int h = 1;
@@ -140,7 +136,6 @@ public class Ex2AlgoritmosOrdenacao {
 
     }
 
-    // MergeSort
     public static void mergeSort(int[] vetor, int esq, int dir) {
         if (esq >= dir) {
             return;
@@ -184,7 +179,6 @@ public class Ex2AlgoritmosOrdenacao {
         }
     }
 
-    // QuickSort
     public static void quickSort(int[] vetor, int ini, int fim) {
         if (ini < fim) {
             int index_pivot = particionaHoare(vetor, ini, fim);
@@ -220,7 +214,6 @@ public class Ex2AlgoritmosOrdenacao {
         return j;
     }
 
-    // Exibir resultados
     public static void exibirResultados(long[][] tempos, int repeticoes) {
         String[] algoritmos = { "BubbleSort", "InsertionSort", "SelectionSort", "ShellSort", "MergeSort", "QuickSort" };
         System.out.printf("%-12s", "Algoritmo");
