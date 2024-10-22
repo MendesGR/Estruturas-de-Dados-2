@@ -11,18 +11,15 @@ public class Ex4BubbleSort {
         for (int i = 0; i < repeticoes; i++) {
             int[] vetor = gerarVetorAleatorio(tamanho, maxVal);
 
-            // Medir tempo de execução da versão otimizada do BubbleSort
             long comeco = System.nanoTime();
             bubbleSortOtimizado(vetor);
             long fim = System.nanoTime();
             tempos[i] = fim - comeco;
         }
 
-        // Exibir os resultados
         printResults(tempos);
     }
 
-    // Método que gera um array de inteiros aleatórios
     public static int[] gerarVetorAleatorio(int tamanho, int maxVal) {
         int[] vetor = new int[tamanho];
         Random rand = new Random();
@@ -34,7 +31,6 @@ public class Ex4BubbleSort {
         return vetor;
     }
 
-    // Versão otimizada do BubbleSort
     public static void bubbleSortOtimizado(int[] vetor) {
         int n = vetor.length;
         boolean troca;
