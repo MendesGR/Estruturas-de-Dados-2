@@ -15,7 +15,7 @@ public class TabelaHash implements ITabelaHash {
 
     // @Override
     // public void put(int chave, Aluno elemento) {
-    // int posicao = this.hash(cahve)
+    // int posicao = this.hash(chave)
 
     // @Override
     // public Aluno remove(int chave) {}
